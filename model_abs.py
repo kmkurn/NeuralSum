@@ -279,7 +279,7 @@ def vanilla_attention_decoder(enc_outputs,
 
     with tf.variable_scope('output'):
         model_outputs = []
-        for i in xrange(len(decoder_outputs)):
+        for i in range(len(decoder_outputs)):
           if i > 0:
             tf.get_variable_scope().reuse_variables()
           model_outputs.append(
@@ -401,7 +401,7 @@ def flexible_attention_decoder(enc_outputs,
 
     with tf.variable_scope('output'):
         model_outputs = []
-        for i in xrange(len(decoder_outputs)):
+        for i in range(len(decoder_outputs)):
           if i > 0:
             tf.get_variable_scope().reuse_variables()
           model_outputs.append(

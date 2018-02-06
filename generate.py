@@ -138,14 +138,14 @@ def main(_):
         save_file = open(save_as, 'w')
 
         for x, y in test_reader.iter():
-            for i in xrange(FLAGS.batch_size):
+            for i in range(FLAGS.batch_size):
                 xi, yi = x[[i], :, :], y[[i], :]
 
                 predicted_yi = yi[:, [0]]
                 last_ix = -1 # used in constrained          
 
                 rnn_state = session.run(m.initial_dec_state) 
-                for i in xrange(max_output_length):
+                for i in range(max_output_length):
                 
                     # this is slow, fix it  
                     logits, rnn_state = session.run([m.logits, m.final_dec_state],
